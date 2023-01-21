@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 
 const CRYPTOBOOKZ = () => {
   const loadBooks_TitleGallery = () => {
@@ -12,29 +13,39 @@ const CRYPTOBOOKZ = () => {
 
   };
   return (
-    <div className="flex min-h-screen flex-col bg-black text-slate-600 items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col bg-black text-slate-600 items-center justify-center">
       <Head>
         <title>CRYPTOBOOKZ</title>
         <link rel="icon" href="/icon1.ico" />
       </Head>
+{/* 
+      <Link href="/">Home</Link>
+        </li>
+        <li>
+        <Link href="/about">About Us</Link>
+        </li>
+        <li>
+        <Link href="/blog/hello-world">Blog Post</Link> */}
 
-      <header className="flex w-full justify-center sm:items-center h-20 gap-x-2">{/*BUTTON-FRAME*/}
 
-          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 w-1/5"} onClick={
-              () => { loadBooks_TitleGallery(); }
-            }>NFT~BOOKS</button>
+      <header className="flex w-full items-center justify-center sm:items-center h-20 gap-x-2 px-4 border-b-2 border-b-indigo-500/50">{/*BUTTON-FRAME*/}
 
-          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 w-1/5"} 
+
+          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5"} onClick={
+              () => { /*loadBooks_TitleGallery();*/ }
+            }><Link href="/">NFT~BOOKZ</Link></button>
+
+          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5"} 
             onClick={ ()=>{ loadBook_TitleLast() }
             }>LAST~BOOK</button>
 
-          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 w-1/5"} 
+          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5"} 
             onClick={ ()=>{ loadBook_TitleNext() }
             }>NEXT~BOOK</button>
 
-          <input className={"rounded-md pl-4 h-10 mt-4"} disabled={true} type={"text"} placeholder="load wallet or collection"></input>
+          <input className={"rounded-md pl-4 h-10"} disabled={true} type={"text"} placeholder="load wallet or collection"></input>
 
-          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 w-1/5"} 
+          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5"} 
             onClick={ ()=>{ fetchNFTs() }
             }>LOAD~BOOK</button>
 
@@ -43,36 +54,26 @@ const CRYPTOBOOKZ = () => {
 
 
 
-      <header className="flex h-24 w-full items-center justify-center border-b">
-        {/* <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          by {' '}
-          <Image src="/img/spazefalcon1.png" className="rounded-xl" alt="" width={60} height={12} />
-        </a> */}
-      </header>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
         <h1 className="text-6xl font-bold">
-          Welcome to{' '}
+          <span className="text-md">Welcome to</span>{' '}
           <a className="text-blue-600" href="https://linktr.ee/spazefalcon">
             CRYPTOBOOKZ!
           </a>
         </h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing{' '}
+          NFT~Bookz,{' '}
           <code className="rounded-md p-3 font-mono text-lg">
-            pages/index.tsx
+          mixed-media adventures... to create, collect, and share. 
+          ~ : )
           </code>
         </p>
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="mt-6 w-96 rounded-xl border border-b-2 border-blue-400 hover:border-indigo-500/50 p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -81,7 +82,7 @@ const CRYPTOBOOKZ = () => {
           </a>
 
           <a href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="mt-6 w-96 rounded-xl border border-b-2 border-blue-400 hover:border-indigo-500/50 p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Learn &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -90,7 +91,7 @@ const CRYPTOBOOKZ = () => {
           </a>
 
           <a href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="mt-6 w-96 rounded-xl border border-b-2 border-blue-400 hover:border-indigo-500/50 p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Examples &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -99,7 +100,7 @@ const CRYPTOBOOKZ = () => {
           </a>
 
           <a href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="mt-6 w-96 rounded-xl border border-b-2 border-blue-400 hover:border-indigo-500/50 p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -109,15 +110,15 @@ const CRYPTOBOOKZ = () => {
         </div>
       </main>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
+      <footer className="flex h-12 w-full items-center justify-center border-t-2 border-t-indigo-500/50">
         <a
           className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://linktr.ee/spazefalcon"
           target="_blank"
           rel="noopener noreferrer"
         >
           by {' '}
-          <Image src="/img/spazefalcon1.png" className="rounded-xl" alt="" width={60} height={12} />
+          <Image src="/img/spazefalcon1.png" className="rounded-xl" alt="" width={40} height={10} />
         </a>
       </footer>
     </div>
