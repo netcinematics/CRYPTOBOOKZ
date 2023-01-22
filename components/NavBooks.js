@@ -19,8 +19,8 @@ export default function NavBooks({dataManager}) {
         <header className="h-15 bg-black ">{/* PAGE Header */}
         <div className="flex w-full justify-center sm:items-center gap-x-2">{/*BUTTON-FRAME*/}
  
-           <button className={"disabled:bg-slate-500 w-44 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 rounded-sm w-1/5"} onClick={
-             () => { dataManager.data1(); }
+           <button className={"disabled:bg-slate-500 w-44 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 rounded-sm w-1/5 hover:bg-blue-400 hover:text-white"} 
+           onClick={ () => { dataManager.data1(); }
            }>NFT~BOOKS</button>
  
            <button className={"disabled:bg-slate-500 w-44 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 rounded-sm w-1/5"} 
