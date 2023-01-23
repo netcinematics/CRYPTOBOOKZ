@@ -163,9 +163,11 @@ export default function Book1() {
 
 </header> 
 
-<featureframe className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+<featureframe className="flex w-full flex-1 flex-col items-center justify-center self-stretch items-stretch px-20 py-10 text-center">
 {/* { (ViewID === "TitleView001") ? <TitleView001 /> : <IntroView /> } */}
+<fullDIV className=" h-full"> 
 <GalleryBook nfts={NFTs}/>
+</fullDIV>
 </featureframe>
 
             {/* <div className="flex flex-col h-full items-center justify-center gap-y-3 bg-black">

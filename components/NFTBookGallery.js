@@ -52,15 +52,15 @@ export default function GalleryBook({ nfts }) {
     let nft = nfts[index];
     // let sculpture = sculptureList[index];
     return (
-      <div style={{color:'steelblue'}}>        
-      <button onClick={handleLastClick}>
-      Last
-    </button>
-        <button onClick={handleNextClick}>
-          Next
-        </button>
+      <div style={{color:'steelblue'}} className="h-full self-stretch items-stretch">        
+
 { nfts.length && 
 <>
+<div className="flex flex-col bg-indigo-800/20 rounded-xl self-center items-center h-full ">
+
+<img className="rounded-xl self-center w-1/2 my-8" src={nft.media[0].gateway} />
+
+
         <h2>
           <i>{nft.title} </i>
           {/* <i>{sculpture.name} </i> */}
@@ -75,13 +75,18 @@ export default function GalleryBook({ nfts }) {
           {showMore ? 'Hide' : 'Show'} details
         </button>
         {showMore && <p>{nft.description}</p>}
-        {/* {showMore && <p>{sculpture.description}</p>} */}
-        <img className='max-w-screen-sm self-center flex grow hover:object-scale-down'
-          src={nft.media[0].gateway}
-          // src={sculpture.url}
-          // alt={sculpture.alt}
-          />
-</>
+
+        </div>
+
+        <button onClick={handleLastClick}>
+      Last
+    </button>
+        <button onClick={handleNextClick}>
+          Next
+        </button>
+
+
+    </> 
 }
 
       </div>

@@ -10,8 +10,8 @@ const CRYPTOBOOKZ = () => {
   let ViewID = "TitleView001";
 
   const loadBooks_TitleGallery = () => {
-    
-  };
+      
+  };  
   const loadBook_TitleLast = () => {
 
   };
