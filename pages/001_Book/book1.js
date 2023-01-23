@@ -1,6 +1,7 @@
-import GalleryBook from '../components/NFTBookGallery';
-import { NFTCard } from "../components/nftCard"
-import NavBooks from '../components/NavBooks';
+import GalleryBook from '../../components/NFTBookGallery';
+import { NFTCard } from "../../components/nftCard"
+// import NavBooks from '../components/NavBooks';
+import Link from 'next/link';
 import { useState } from 'react'
 export default function Book1() {
     console.log("init_book1")
@@ -10,7 +11,7 @@ export default function Book1() {
     // let NFTs = []; 
     // const setNFTs = (nftz) => {
     //   NFTs = nftz;
-    // }
+    // } 
     // const [fetchForCollection, setFetchForCollection]=useState(false);
   
     //Pagination Variables.
@@ -131,38 +132,44 @@ export default function Book1() {
       // }
     }
 
-    const dataManager = {
-        data1:()=>{ fetchNFTsForCollection() },
-        data2:()=>{ fetchNFTs() },
-        data3:()=>{ fetchNFTsPolygon() },
-    }
+    // const dataManager = {
+    //     data1:()=>{ fetchNFTsForCollection() },
+    //     data2:()=>{ fetchNFTs() },
+    //     data3:()=>{ fetchNFTsPolygon() },
+    // }
     return (
         <>
-        <div className="flex flex-col h-screen overflow-hidden justify-between bg-black">
+        <div className="flex flex-col h-screen overflow-hidden justify-between bg-black text-blue-400">
+        <header className="flex w-full items-center justify-center sm:items-center h-20 gap-x-2 px-4 border-b-2 border-b-indigo-500/50 hover:bg-slate-800 ">{/*BUTTON-FRAME*/}
 
-            <h1>Book1</h1>
+<button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+  onClick={ () => { /*loadBooks_TitleGallery();*/ } }
+  ><Link href="/">NFT~BOOKZ</ Link></button>
 
-            <NavBooks dataManager={dataManager} />
+<button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5  hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+  onClick={ ()=>{ loadBook_TitleLast() }
+  }>LAST~BOOK</button>
 
-            <GalleryBook nfts={NFTs}/>
-            {/* <nav>
+<button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+  onClick={ ()=>{ loadBook_TitleNext() }
+  }>NEXT~BOOK</button>
 
-                <button className={"disabled:bg-slate-500 w-44 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 rounded-sm w-1/5"} onClick={
-                    () => { fetchNFTsForCollection(); }
-                }>NFT~BOOKS</button>
+<input className={"rounded-md pl-4 h-10"} disabled={true} type={"text"} placeholder="load wallet or collection"></input>
 
-                <button className={"disabled:bg-slate-500 w-44 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 rounded-sm w-1/5"} 
-                onClick={ ()=>{ fetchNFTs() }
-                }>LAST~BOOK</button>
+<button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+  onClick={ ()=>{ fetchNFTs() }
+  }>LOAD~BOOK</button>
 
-                <button className={"disabled:bg-slate-500 w-44 rounded-md text-blue bg-blue-400 px-4 py-2 mt-4 rounded-sm w-1/5"} 
-                onClick={ ()=>{ fetchNFTsPolygon() }
-                }>NEXT~BOOK</button>
 
-            </nav> */}
+</header> 
 
-            <div className="flex flex-col h-full items-center justify-center gap-y-3 bg-black">
-                {/*CARD-FRAME*/} {/*overflow-x-scroll*/}
+<featureframe className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+{/* { (ViewID === "TitleView001") ? <TitleView001 /> : <IntroView /> } */}
+<GalleryBook nfts={NFTs}/>
+</featureframe>
+
+            {/* <div className="flex flex-col h-full items-center justify-center gap-y-3 bg-black">
+        
                 <div className='flex sm:flex-col h-full sm:items-center gap-y-8 mt-6 gap-x-2 '>
                 {
                     NFTs.length && NFTs.map( (nft,i) => {
@@ -173,7 +180,7 @@ export default function Book1() {
                     
                 }
                 </div>
-            </div>
+            </div> */}
 
 
         </div>

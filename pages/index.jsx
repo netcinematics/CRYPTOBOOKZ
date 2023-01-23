@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link';
+
 import IntroView from '../components/IntroView'
 import TitleView001 from './001_Book/TitleView'
 
@@ -23,23 +24,12 @@ const CRYPTOBOOKZ = () => {
         <title>CRYPTOBOOKZ</title>
         <link rel="icon" href="/icon1.ico" />
       </Head>
-{/* 
-      <Link href="/">Home</Link>
-        </li>
-        <li>
-        <Link href="/about">About Us</Link>
-        </li>
-        <li>
-        <Link href="/blog/hello-world">Blog Post</Link> */}
-
 
       <header className="flex w-full items-center justify-center sm:items-center h-20 gap-x-2 px-4 border-b-2 border-b-indigo-500/50 hover:bg-slate-800 ">{/*BUTTON-FRAME*/}
 
-
-          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} onClick={
-              () => { /*loadBooks_TitleGallery();*/ }
-            }>NFT~BOOKZ</button>
-            {/* }><Link href="/">NFT~BOOKZ</Link></button> */}
+          <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+            onClick={ () => { /*loadBooks_TitleGallery();*/ } }
+            ><Link href="/">NFT~BOOKZ</ Link></button>
 
           <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5  hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
             onClick={ ()=>{ loadBook_TitleLast() }
