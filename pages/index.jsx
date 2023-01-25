@@ -62,7 +62,9 @@ const CRYPTOBOOKZ = () => {
           <Image src="/img/spazefalcon1.png" className="rounded-xl" alt="" width={40} height={10} />
         </a>
       </footer>
+      <style jsx global>{` `}</style>
     </div>
+    
   )
 }
 
