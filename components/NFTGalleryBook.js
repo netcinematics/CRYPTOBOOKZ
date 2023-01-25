@@ -33,12 +33,19 @@ export default function GalleryBook({ nfts }) {
 <div className="flex flex-col bg-indigo-800/20 rounded-xl self-center items-center h-full ">
 
 {/* <img className="rounded-xl self-center w-full sm:w-1/2 md:w-1/2 xl:w-1/2 2xl:w-1/3 my-4" src={nft.media[0].gateway} /> */}
-<img className="flex md:flex-grow lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl  rounded-xl self-center w-full my-4" src={nft.media[0].gateway} />
+{/* <img className="flex  lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl lg:max-h-md  md:max-h-md sm:max-h-md  rounded-xl self-center w-full my-4" src={nft.media[0].gateway} /> */}
+ { showMore ?
+<img className="flex h-8/10 sm:flex-auto w-auto  lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl 
+                 rounded-xl self-center w-full my-4" style={{ width: 'auto' }} src={nft.media[0].gateway} />
+:
+<img className="flex h-8/10 sm:flex-auto w-auto  lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl 
+                 rounded-xl self-center w-full my-4" style={{height: '70%', width: 'auto' }} src={nft.media[0].gateway} />
+ }
 {/* <img className="flex md:flex-grow lg:max-w-2xl rounded-xl self-center w-full my-4" src={nft.media[0].gateway} /> */}
 {/* <img className="max-w-2xl my-4" src={nft.media[0].gateway} /> */}
 
    {/* <datatray className="border border-blue-400 rounded-lg m-2 p-2 "> */}
-   <datatray className="flex flex-col flex-2 border border-blue-400 rounded-lg m-2 p-2 ">
+   <datatray className="flex flex-col flex-2-0 border border-blue-400 rounded-lg m-2 p-2 ">
         <h2>
           <i>{nft.title} </i>
           {/* <i>{sculpture.name} </i> */}
