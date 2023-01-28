@@ -11,31 +11,37 @@ const CRYPTOBOOKZ = () => {
 
   // let ViewID = '';//"TitleView001";
   const [viewID, setViewID] = useState('TitleView');
-  const [bookIDX, setBookID] = useState(1);
+  const [bookIDX, setBookID] = useState(0);
 
   const connectWallet = () => {
     //TODO: window.ethereum
   };  
-  const loadBooks_TitleGallery = () => {
+  const loadBooks_TitleMain = () => {
     //TODO: show scrollable grid of bookz.
   };  
   const loadBook_TitleLast = () => { 
-
+    if(bookIDX<1){ setBookID(bookList.length-1)} //loop around index
+    else { setBookID(bookIDX - 1); }
   };
   const loadBook_TitleNext = () => {
-    setBookID(bookIDX + 1);
+    // setBookID(bookIDX + 1);
+    if(bookIDX >= bookList.length-1){ setBookID(0); } //loop around index        
+    else { setBookID(bookIDX + 1); }
+
+
   };
 
-  const renderbookList = (pageNUM) => {
-    let page = null;
-    if ("TitleView"){
-      return  <TitleView001 />
-    } else {
-      return  <AboutView />
-    }  
-  };
-  let bookList = [];  
-  let book = bookList[bookIDX];
+
+  // const renderbookList = (pageNUM) => {
+  //   let page = null;
+  //   if ("TitleView"){
+  //     return  <TitleView001 />
+  //   } else {
+  //     return  <AboutView />
+  //   }  
+  // };
+  let bookList = [1,2,3,4];  
+  // let book = bookList[bookIDX];
   return (
     <div className="flex min-h-screen flex-col bg-black text-slate-600 items-center justify-center">
       <Head>
@@ -45,9 +51,9 @@ const CRYPTOBOOKZ = () => {
 
       <header className="flex w-full items-center justify-center sm:items-center h-20 gap-x-2 px-4 border-b-2 border-b-indigo-500/50 hover:bg-slate-800 ">{/*BUTTON-FRAME*/}
 
-          <button disabled className={"disabled:bg-slate-500 disabled:hover:text-black rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
-            onClick={ () => { loadBooks_TitleGallery(); } }
-            ><Link href="/">GALLERY</ Link></button>
+          <button className={"disabled:bg-slate-500 disabled:hover:text-black rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+            onClick={ () => { loadBooks_TitleMain(); } }
+            ><Link href="/">MAIN</ Link></button>
 
           <button className={"disabled:bg-slate-500 rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5  hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
             onClick={ ()=>{ loadBook_TitleLast() }
@@ -57,7 +63,7 @@ const CRYPTOBOOKZ = () => {
             onClick={ ()=>{ loadBook_TitleNext() }
             }>NEXT~BOOK</button>
       
-          <h3> 
+          <h3>  
             ({bookIDX + 1} of {bookList.length})
           </h3>
 
