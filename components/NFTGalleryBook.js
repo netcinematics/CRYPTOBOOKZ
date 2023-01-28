@@ -36,7 +36,7 @@ export default function GalleryBook({ nfts }) {
 {/* <img className="flex  lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl lg:max-h-md  md:max-h-md sm:max-h-md  rounded-xl self-center w-full my-4" src={nft.media[0].gateway} /> */}
  { showMore ?
 <img className="flex h-8/10 sm:flex-auto w-auto  lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl 
-                 rounded-xl self-center w-full my-4" style={{ width: 'auto' }} src={nft.media[0].gateway} />
+                 rounded-xl self-center w-full my-4" style={{ width: 'auto', height: '50%' }} src={nft.media[0].gateway} />
 :
 <img className="flex h-8/10 sm:flex-auto w-auto  lg:max-w-2xl  md:max-w-2xl sm:max-w-2xl 
                  rounded-xl self-center w-full my-4" style={{height: '70%', width: 'auto' }} src={nft.media[0].gateway} />

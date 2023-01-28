@@ -1,4 +1,4 @@
-export default function AboutView() {
+export default function IntroView() {
 
 return (
     <main className="flex w-full flex-1 flex-col items-center justify-center text-center">
@@ -21,7 +21,7 @@ return (
     <a href="https://nextjs.org/docs"
         className="mt-6 w-96 rounded-xl border border-b-2 border-blue-400 hover:border-indigo-500/50 p-6 text-left hover:text-blue-600 focus:text-blue-600"
     >
-        <h3 className="text-2xl font-bold">Intro &rarr;</h3>
+        <h3 className="text-2xl font-bold">About &rarr;</h3>
         <p className="mt-4 text-xl">
         Find in-depth information about Next.js features and its API.
         </p>

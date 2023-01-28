@@ -71,26 +71,31 @@ export default function Book1() {
     return (
         <>
         <div className="flex flex-col h-screen overflow-hidden justify-between bg-black text-blue-400">
-        <header className="flex w-full items-center justify-center sm:items-center h-20 gap-x-2 px-4 border-b-2 border-b-indigo-500/50 hover:bg-slate-800 ">{/*BUTTON-FRAME*/}
+        <header className="flex w-full justify-between items-center justify-center sm:items-center h-20 gap-x-2 px-4 border-b-2 border-b-indigo-500/50 hover:bg-slate-800 ">{/*BUTTON-FRAME*/}
 
-<button disabled className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+<button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
   onClick={ () => { /*loadBooks_TitleGallery();*/ } }
-  ><Link href="/">NFT~BOOKZ</ Link></button>
+  ><Link href="/">GALLERY</ Link></button>
 
-<button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5  hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+<booktitle> 
+   spazefalcon's wallet  
+</booktitle>
+
+<div>0</div>
+
+{/* <button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5  hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
   onClick={ ()=>{ loadBook_TitleLast() }
-  }>LAST~BOOK</button>
+  }>LAST~BOOK</button> */}
 
-<button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+{/* <button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
   onClick={ ()=>{ loadBook_TitleNext() }
-  }>NEXT~BOOK</button>
+  }>NEXT~BOOK</button> */}
 
-<input className={"rounded-md text-sm pl-4 h-10"} disabled={true} type={"text"} placeholder="load wallet or collection"></input>
+{/* <input className={"rounded-md text-sm pl-4 h-10"} disabled={true} type={"text"} placeholder="load wallet or collection"></input> */}
 
-<button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
+{/* <button className={"disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
   onClick={ ()=>{ fetchNFTs() }
-  }>LOAD~BOOK</button>
-
+  }>LOAD~BOOK</button> */}
 
 </header> 
 
