@@ -7,13 +7,11 @@ export default function GalleryBook({ nfts }) {
     const [showMore, setShowMore] = useState(false);
   
     function handleLastClick() {
-        console.log("TEST1",nfts.length,index)
       if(index<1){ setIndex(nfts.length-1)} //loop around index
       else { setIndex(index - 1); }
     }
 
     function handleNextClick() {
-      console.log("TEST2",nfts.length,index)
       if(index >= nfts.length-1){ setIndex(0); } //loop around index        
       else { setIndex(index + 1); }
     }

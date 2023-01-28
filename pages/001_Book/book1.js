@@ -78,7 +78,7 @@ export default function Book1() {
   ><Link href="/">GALLERY</ Link></button>
 
 <booktitle> 
-   spazefalcon's wallet  
+   wallet  1
 </booktitle>
 
 <div>0</div>
