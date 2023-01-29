@@ -72,7 +72,7 @@ export default function GalleryBook({ nfts }) {
           LAST 
         </button>
         <h3 className="mt-1 mx-2">
-          ({index + 1} of {nfts.length})
+          {index + 1} of {nfts.length}
         </h3>
         <button className={"disabled:bg-slate-50 flex items-center justify-center rounded-md bg-blue-400 text-sm py-1 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-green-800 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
         onClick={handleNextClick}>
