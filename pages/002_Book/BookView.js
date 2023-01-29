@@ -6,7 +6,8 @@ export default function BookView() {
     const [NFTs, setNFTs] = useState([]);
 
     useEffect(() => { //Automatically load the book data.
-        fetchNFTs();
+        // fetchNFTs();
+        fetchNFTsForCollection(); //single cozmos img.
     }, [])
     
     const fetchNFTsPolygon = async() => {
@@ -71,7 +72,7 @@ export default function BookView() {
             <Link href="/">GALLERY</ Link>
           </button>
           <booktitle> 
-            wallet  2
+            coming~soon
           </booktitle>
           <button disabled className={"disabled:bg-slate-500 disabled:hover:text-black text-xs rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
               onClick={ ()=>{ connectWallet() } // TODO

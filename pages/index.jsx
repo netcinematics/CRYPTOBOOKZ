@@ -33,21 +33,15 @@ const CRYPTOBOOKZ = () => {
 
   const renderbookList = (pageNUM) => {
     let page = null;
-    if (bookIDX===0){
-      return  <TitleView001 />
-    }else if (bookIDX===1){
-      return  <TitleView002 />
-    }else if (bookIDX===2){
-      return  <TitleView003 />
-    }else if (bookIDX===3){
-      return  <AboutView />
-    } else {
-      return  <ContactView />
+    if (bookIDX===0){ return bookList[0];
+    } else if (bookIDX===1){ return bookList[1];
+    } else if (bookIDX===2){ return bookList[2];
+    } else if (bookIDX===3){ return bookList[3];
+    } else { return bookList[4];
     }  
   };
 
-  let bookList = [1,2,3,4,5];  
-  // let book = bookList[bookIDX];
+  let bookList = [<TitleView001/>,<TitleView002/>,<TitleView003/>,<AboutView/>,<ContactView/>];  
   return (
     <div className="flex min-h-screen flex-col bg-black text-slate-600 items-center justify-center">
       <Head>

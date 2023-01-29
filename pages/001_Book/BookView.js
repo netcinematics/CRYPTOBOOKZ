@@ -6,18 +6,20 @@ export default function BookView() {
     const [NFTs, setNFTs] = useState([]);
 
     useEffect(() => { //Automatically load the book data.
-        fetchNFTs();
+        fetchNFTs();          //wallet.
+        // fetchNFTsPolygon();   //broken.
+        // fetchNFTsForCollection(); //single cozmos img.
     }, [])
     
     const fetchNFTsPolygon = async() => {
       let nfts; 
-      console.log("fetching nfts");
+      console.log("fetching polygon nfts");
 
       const fetchURL = `${process.env.NEXT_PUBLIC_POLYGON_MAIN_NFTS}`;
       var requestOptions = {
           method: 'GET'
         };
-    
+    console.log("URL",fetchURL);
         nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
     
       if (nfts) {
