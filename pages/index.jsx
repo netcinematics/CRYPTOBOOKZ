@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from "next/dynamic"
 import { useState } from 'react';
 
 import AboutView from '../views/AboutView'
@@ -41,7 +42,11 @@ const CRYPTOBOOKZ = () => {
     }  
   };
 
+  const textToCopy = "0x12web3...ski";
+  const CC = dynamic(() => import("../components/copyClipboard").then(mod => mod.CopyClipboard), { ssr: false })
+
   let bookList = [<TitleView001/>,<TitleView002/>,<TitleView003/>,<AboutView/>,<ContactView/>];  
+
   return (
     <div className="flex min-h-screen flex-col bg-black text-slate-600 items-center justify-center">
       <Head>
@@ -54,7 +59,12 @@ const CRYPTOBOOKZ = () => {
             onClick={ () => { loadBooks_TitleMain(); } }
             ><Link href="/">MAIN</ Link></button>
 
-          <maintitle className="text-md md:text-2xl" style={{'font-family':'fantasy'}}>C R Y P T O B O O K Z</maintitle>
+          <maintitle className="flex text-md md:text-2xl" style={{'font-family':'fantasy'}}>
+            C R Y P T O B O O K Z
+            <div className="ml-2 hover:shadow-indigo-500 hover:shadow-blue-100">{/*icon*/}
+              <CC content={textToCopy} />
+            </div>
+          </maintitle>
 
           <button disabled className={"disabled:bg-slate-500 disabled:hover:text-black text-xs rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
               onClick={ ()=>{ connectWallet() }
