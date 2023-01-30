@@ -12,8 +12,8 @@ return (
         <code className="rounded-md p-3 font-mono  text-1md">1/2020<span> ...more</span> {/* TODO more */}
         </code>
     </p>
-    <div className="mt-2 pb-1 pt-1 px-4 rounded-xl border items-center justify-center text-center border-b-2 border-blue-400  hover:shadow-blue-500 hover:border-indigo-500/50 p-1 text-left text-blue-600 hover:text-indigo-600 active:text-slate-700 shadow-lg shadow-blue-500/50 active:shadow-indigo-500">
-    <Link href="/003_Book/BookView">~OPEN3~</Link>
-    </div>
+    <Link href="/003_Book/BookView">
+        <button className="mt-2 pb-1 pt-1 px-4 rounded-xl border items-center justify-center text-center border-b-2 border-blue-400  hover:shadow-blue-500 hover:border-indigo-500/50 p-1 text-left text-blue-600 hover:text-indigo-600 active:text-slate-700 shadow-lg shadow-blue-500/50 active:shadow-indigo-500">
+            ~OPEN3~</button></Link>
 </main>
 )}
