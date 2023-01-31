@@ -27,7 +27,7 @@ export default function BookView() {
       }
     }
     
-    const textToCopy = "0x12web3...ski"; //TODO
+    const textToCopy = "0x7faeae9de74e54998065c2438fcf966ccbf5cfe4219af3da2581b792cb1da0a8"; 
     const CC = dynamic(() => import("../../components/copyClipboard").then(mod => mod.CopyClipboard), { ssr: false })
 
     return (
@@ -36,8 +36,11 @@ export default function BookView() {
           <Link className={"px-4 w-1/5 h-8"} href="/">
             <button className={"w-full h-full disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"}>
               GALLERY</button></ Link>
-          <booktitle> 
-            Polygon MAINNET : spazefalcon_collection
+            <booktitle className="flex"> 
+              Polygon MAINNET : spazefalcon_collection
+              <div className="ml-2 hover:shadow-indigo-500 hover:shadow-blue-100">{/*icon*/}
+                <CC content={textToCopy} />
+              </div>            
           </booktitle>
           <button disabled className={"disabled:bg-slate-500 disabled:hover:text-black text-xs rounded-md text-blue bg-blue-400 px-4 py-2 w-1/5 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
               onClick={ ()=>{ connectWallet() } // TODO

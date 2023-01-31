@@ -42,7 +42,7 @@ const CRYPTOBOOKZ = () => {
     }  
   };
 
-  const textToCopy = "0x12web3...ski";
+  const textToCopy = "https://linktr.ee/spazefalcon";
   const CC = dynamic(() => import("../components/copyClipboard").then(mod => mod.CopyClipboard), { ssr: false })
 
   let bookList = [<TitleView001/>,<TitleView002/>,<TitleView003/>,<AboutView/>,<ContactView/>];  

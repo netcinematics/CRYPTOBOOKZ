@@ -24,7 +24,7 @@ export default function BookView() {
       }
     }    
 
-    const textToCopy = "0x12web3...ski";
+    const textToCopy = "0xE52A031E3d5b0Dcb086A30e533CF6a71c77f6C27";
     const CC = dynamic(() => import("../../components/copyClipboard").then(mod => mod.CopyClipboard), { ssr: false })
 
     return (
@@ -33,7 +33,7 @@ export default function BookView() {
         <Link className={"px-4 w-1/5 h-8"} href="/">
             <button className={"w-full h-full disabled:bg-slate-500 text-sm rounded-md text-blue bg-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"}>
               GALLERY</button></ Link>
-          <booktitle> 
+          <booktitle className="flex"> 
             ETH_MAINNET_1
             <div className="ml-2 hover:shadow-indigo-500 hover:shadow-blue-100">{/*icon*/}
               <CC content={textToCopy} />

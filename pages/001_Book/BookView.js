@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link';
 import dynamic from "next/dynamic"
 
-// import pageIMGs from './img/prod_set_002/EP1_1_ttl_800_1280.jpg'
-
 export default function BookView() { 
     const [NFTs, setNFTs] = useState([]);
+    const [nextBatchKey,setBatchKey] = useState('');
 
     useEffect(() => { //Automatically load the book data.
         fetchNFTsPolygon();   //broken.
@@ -18,11 +17,29 @@ export default function BookView() {
       var requestOptions = { method: 'GET' };
       nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
       if (nfts) {
+        setBatchKey(nfts.pageKey);
+        if(nfts.pageKey){batchManager.batch=true;}
         setNFTs(nfts.ownedNfts);
       } 
     }
 
-    const textToCopy = "0x12web3...ski";
+    const fetchNFTsPolygonBatch = async(pageKey) => {
+      let nfts; 
+      const fetchURL = `${process.env.NEXT_PUBLIC_POLYGON_MAIN_NFTS}&pageKey=${pageKey}`;
+      var requestOptions = { method: 'GET' };
+      nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
+      if (nfts) {
+        setNFTs(nfts.ownedNfts);
+      } 
+    }
+
+    const batchManager = {
+      batch:false,
+      next:function(){ fetchNFTsPolygonBatch(nextBatchKey) },
+      last:function(){ fetchNFTsPolygonBatch(2) }
+    }
+
+    const textToCopy = "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0";
     const CC = dynamic(() => import("../../components/copyClipboard").then(mod => mod.CopyClipboard), { ssr: false })
    
     return (
@@ -43,7 +60,7 @@ export default function BookView() {
 
         </header> 
         <featureframe className="flex w-full flex-1 flex-col items-center justify-center self-stretch items-stretch px-2 md:px-20 pt-6 pb-12 text-center  overflow-auto">
-          <GalleryBook nfts={NFTs}/>
+          <GalleryBook nfts={NFTs} batch={batchManager}/>
         </featureframe>
       </div>
     )
