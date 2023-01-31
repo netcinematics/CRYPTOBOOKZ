@@ -3,6 +3,7 @@ import Link from 'next/link'
 export default function NavBooks({dataManager}) {
 
     return (
+        // EXAMPLE next/LINK
         // <div style={{color: 'steelblue'}}>
         // <ul> 
         // <li>

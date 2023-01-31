@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { sculptureList } from '../data/data.js';
 
-export default function GalleryBook({ nfts, batch }) {
-  const [batchMode,setBatchMode] = useState((batch && batch.batch)?true:false)
+export default function GalleryBook({ nfts, batch, batchKey }) {
   const [index, setIndex] = useState(0);    //pages
   const [showMore, setShowMore] = useState(false);
   const [batchIDX, setBatch] = useState(1); //batch of 100 pageKey results
@@ -41,7 +39,7 @@ return (
 <galleryframe className="h-full"> 
 
   <div style={{color:'steelblue'}} className="h-full self-stretch items-stretch mb-1">        
-  { (nfts.length<1) ? <span>loading...</span>  :
+  { (!nfts || nfts.length<1) ? <span>loading...</span>  :
 
     <div className="flex flex-col bg-indigo-800/20 rounded-xl self-center items-center h-full ">
       { showMore ?
@@ -52,7 +50,7 @@ return (
           rounded-xl self-center w-full my-4" style={{height: '70%', width: 'auto' }} src={nft.media[0].gateway} />
       }
 
-      <datatray className="flex flex-col flex-2-0 border border-blue-400 rounded-lg m-2 p-2 ">
+      <datatray className="flex flex-col flex-2-0 border border-blue-400 rounded-lg m-2 p-2 overflow-auto">
           <h2>
             <i>{nft.title} </i>
             by {"spazefalcon"}
@@ -69,7 +67,7 @@ return (
   </div>
 
   <footer className="flex  my-1 align-center text-center justify-center">
-    { (nfts.length >= 100)? //(batch && batch.batch)? //(batchMode)?//
+    { (batchKey || batchIDX>1)?//(nfts.length >= 100 || batchMode===true)? //(batch && batch.batch)? //(batchMode)?//
         <button className={"disabled:bg-slate-50 flex items-center justify-center rounded-md text-blue bg-blue-400 text-sm py-1 mr-2 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
           onClick={handleLastBatch}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,7 +86,7 @@ return (
         NEXT<svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg></button>
-     { (nfts.length >= 100)? //(batch.batch)? //(batchMode)?//
+     { (batchKey)?//(nfts.length >= 100 || batchMode===true)? //(batch.batch)? //(batchMode)?//
         <button className={"disabled:bg-slate-50 flex items-center justify-center rounded-md text-blue bg-blue-400 text-sm py-1 ml-2 hover:bg-blue-400 hover:text-white hover:shadow-blue-500 hover:border-indigo-500/50 text-slate-700 active:text-indigo-700 shadow-lg shadow-cyan-500/50 active:shadow-indigo-500"} 
           onClick={handleNextBatch}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

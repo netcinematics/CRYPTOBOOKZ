@@ -75,7 +75,7 @@ const CRYPTOBOOKZ = () => {
       {/* custom html frames */}
       <booklistframe className="flex w-full flex-1 flex-col items-center justify-center px-2 md:px-20 text-center">
       {         
-        (() => { //DYNAMIC-VIEW-DISPLAY
+        (() => { //DYNAMIC-VIEW-DISPLAY (design~innovation)
           if (viewIDX === "TitleView") {
             return renderbookList();
             // return  <TitleView001 />

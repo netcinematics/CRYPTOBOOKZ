@@ -5,7 +5,6 @@ export const NFTCard = ({ nft }) => {
     const textToCopy = "0x134..skj"
     const CC = dynamic(() => import("../components/copyClipboard").then(mod => mod.CopyClipboard), { ssr: false })
    
-
     return (
 
         <div className="flex flex-col w-full h-full rounded-md justify-between bg-zinc-800">{/*CARD-FRAME*/}
@@ -23,12 +22,6 @@ export const NFTCard = ({ nft }) => {
                         <img className="object-cover shadow-md h-128 w-full rounded-md" src={nft.media[0].gateway} ></img>
                     </div>
                     <div className="flex flex-col m-1 y-gap-2 px-2 py-3 shadow-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md h-110 ">
-                        {/* <div className="bg-sky-500 rounded-md overflow-hidden ">
-                            <h2 className="text-xl text-gray-800">{nft.title}</h2>
-                            <p className="text-gray-600">Id: {nft.id.tokenId}</p>
-                            <p className="text-gray-600" >{nft.contract.address}</p>
-                        </div> */}
-
                         <div className="flex-grow mt-1 bg-black">
                             <p className="text-gray-500 p-3 rounded-md scroll-smooth overflow-hidden">{nft.description}</p>
                         </div>

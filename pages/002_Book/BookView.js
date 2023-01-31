@@ -12,11 +12,12 @@ export default function BookView() {
 
     const fetchNFTs = async() => {
       let nfts; 
-      const api_key = "A8A1Oo_UTB9IN5oNHfAc2tAxdR4UVwfM"; //au publickey
+      const api_key = "A8A1Oo_UTB9IN5oNHfAc2tAxdR4UVwfM"; //au publickey provided by TUTORIAL.
       const baseURL = `https://eth-mainnet.g.alchemy.com/v2/${api_key}/getNFTs/`;
       var requestOptions = {
           method: 'GET'
         };
+      //TODO: add your own wallet 0x in .env.local
       const fetchURL = `${baseURL}?owner=${process.env.NEXT_PUBLIC_OWNER_WALLET}`;
       nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
       if (nfts) {

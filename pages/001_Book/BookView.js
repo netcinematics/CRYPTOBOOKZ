@@ -8,35 +8,26 @@ export default function BookView() {
     const [nextBatchKey,setBatchKey] = useState('');
 
     useEffect(() => { //Automatically load the book data.
-        fetchNFTsPolygon();   //broken.
+        fetchNFTsPolygonBatch();   
     }, [])
 
-    const fetchNFTsPolygon = async() => {
-      let nfts; 
-      const fetchURL = `${process.env.NEXT_PUBLIC_POLYGON_MAIN_NFTS}`;
-      var requestOptions = { method: 'GET' };
-      nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
-      if (nfts) {
-        setBatchKey(nfts.pageKey);
-        if(nfts.pageKey){batchManager.batch=true;}
-        setNFTs(nfts.ownedNfts);
-      } 
-    }
-
     const fetchNFTsPolygonBatch = async(pageKey) => {
-      let nfts; 
+      let res = {}, nfts=[]; 
+     //TODO: add your own .env.local: "https://polygon-mainnet.g.alchemy.com/v2/yourKey/getNFTs/?owner=0xyourWallet"
       const fetchURL = `${process.env.NEXT_PUBLIC_POLYGON_MAIN_NFTS}&pageKey=${pageKey}`;
       var requestOptions = { method: 'GET' };
-      nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
-      if (nfts) {
-        setNFTs(nfts.ownedNfts);
-      } 
+      res = await fetch(fetchURL, requestOptions).then(data => data.json());
+      if (res && res.ownedNfts) { 
+        setBatchKey((res.pageKey)?res.pageKey:'');
+        batchManager.batchKey=res.pageKey;
+        nfts = res.ownedNfts.filter( (o)=>{ return (o.metadata.image) } ); //FILTER image not found. nfts.ownedNfts[3].metadata.image
+        setNFTs(nfts);   
+      }   
     }
 
     const batchManager = {
-      batch:false,
       next:function(){ fetchNFTsPolygonBatch(nextBatchKey) },
-      last:function(){ fetchNFTsPolygonBatch(2) }
+      last:function(){ fetchNFTsPolygonBatch() }
     }
 
     const textToCopy = "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0";
@@ -60,7 +51,7 @@ export default function BookView() {
 
         </header> 
         <featureframe className="flex w-full flex-1 flex-col items-center justify-center self-stretch items-stretch px-2 md:px-20 pt-6 pb-12 text-center  overflow-auto">
-          <GalleryBook nfts={NFTs} batch={batchManager}/>
+          <GalleryBook nfts={NFTs} batch={batchManager} batchKey={nextBatchKey}/>
         </featureframe>
       </div>
     )
