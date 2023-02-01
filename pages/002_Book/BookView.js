@@ -18,8 +18,8 @@ export default function BookView() {
           method: 'GET'
         };
       //TODO: add your own wallet 0x in .env.local
-      // const fetchURL = `${baseURL}?owner=${process.env.NEXT_PUBLIC_OWNER_WALLET}`;
-      const fetchURL = `${baseURL}?owner=${process.env.PROD_OWNER_WALLET}`;
+      const fetchURL = `${baseURL}?owner=${process.env.NEXT_PUBLIC_OWNER_WALLET}`;
+      // const fetchURL = `${baseURL}?owner=${process.env.PROD_OWNER_WALLET}`;
       nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
       if (nfts) {
         setNFTs(nfts.ownedNfts)

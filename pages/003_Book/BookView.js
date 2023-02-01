@@ -13,16 +13,16 @@ export default function BookView() {
     async function fetchPolygonSpazefalcon(){    
       let nftids = {};
       //TODO: add your collection in .env.local: "https://polygon-mainnet.g.alchemy.com/nft/v2/yourKey/getNFTsForCollection?contractAddress=0xYourContractAddr"
-      // const fetchURL = `${process.env.NEXT_PUBLIC_fetch_spazefalcon}`;
-      const fetchURL = `${process.env.PROD_fetch_spazefalcon}`;
+      const fetchURL = `${process.env.NEXT_PUBLIC_fetch_spazefalcon}`;
+      // const fetchURL = `${process.env.PROD_fetch_spazefalcon}`;
       var requestOptions = { method: 'GET'};
       nftids = await fetch(fetchURL, requestOptions).then(data => data.json())
       let nftz = []; 
       for(let i=0; i< nftids.nfts.length; i++){
         let nft;
         //TODO: add your collection ID LOOKUP: "https://polygon-mainnet.g.alchemy.com/nft/v2/yourAPIKey/getNFTMetadata?contractAddress=0xyourContractAddr&tokenId="
-        // const fetchCard = `${process.env.NEXT_PUBLIC_fetch_spazetunes}${nftids.nfts[i].id.tokenId}`;
-        const fetchCard = `${process.env.PROD_fetch_spazetunes}${nftids.nfts[i].id.tokenId}`;
+        const fetchCard = `${process.env.NEXT_PUBLIC_fetch_spazetunes}${nftids.nfts[i].id.tokenId}`;
+        // const fetchCard = `${process.env.PROD_fetch_spazetunes}${nftids.nfts[i].id.tokenId}`;
         nft = await fetch(fetchCard, requestOptions).then(data => data.json());
         if (nft) { nftz.push(nft); }        
       }
